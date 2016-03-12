@@ -1,0 +1,8 @@
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
+C:\Users\Aamir Sultan Malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+C:\Users\Aamir Sultan Malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\AgeCalculator.dll
+C:\Users\Aamir Sultan Malik\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\AgeCalculator.pdb
