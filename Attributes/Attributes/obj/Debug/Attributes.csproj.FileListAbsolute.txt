@@ -1,0 +1,6 @@
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\bin\Debug\Attributes.exe.config
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\bin\Debug\Attributes.exe
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\bin\Debug\Attributes.pdb
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\obj\Debug\Attributes.csprojResolveAssemblyReference.cache
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\obj\Debug\Attributes.exe
+c:\users\aamir sultan malik\documents\visual studio 2013\Projects\Attributes\Attributes\obj\Debug\Attributes.pdb
