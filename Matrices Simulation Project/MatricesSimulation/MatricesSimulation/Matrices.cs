@@ -9,7 +9,7 @@ namespace MatricesSimulation
     class Matrices
     {
         
-        int rows=0, columns=0;
+       public int rows=0, columns=0;
         public void convertToInt(string str)
         {
             bool xFound = false;
@@ -56,7 +56,7 @@ namespace MatricesSimulation
         }
         public bool checkIdentityMatrix(int[,] _matrices, int _rows, int _columns)
         {
-            bool result = false;
+            bool result = false, result1 = false, result2 = false;
             for (int i = 0; i < _rows; i++)
             {
                 for (int j = 0; j < _columns; j++)
@@ -75,19 +75,23 @@ namespace MatricesSimulation
                     }
                     else if (_matrices[i, j] == 0)
                     {
-                        result = true;
+                        result1 = true;
                     }
                     else
                     {
-                        result = false;
+                        result1 = false;
                     }
                 }
             }
-            return result;
+            if (result==true&& result1==true)
+            {
+                result2 = true;
+            }
+            return result2;
         }
         public bool checkScalarMatrix(int[,] _matrices, int _rows, int _columns)
         {
-            bool result = false;
+            bool result = false, result1 = false, result2 = false;
             int diagonalValue = _matrices[0, 0];
             for (int i = 0; i < _rows; i++)
             {
@@ -107,6 +111,91 @@ namespace MatricesSimulation
                     }
                     else if (_matrices[i, j] == 0)
                     {
+                        result1 = true;
+                    }
+                    else
+                    {
+                        result1 = false;
+                    }
+                }
+            }
+            if (result==true&&result1==true)
+            {
+                result2 = true;
+            }
+            return result2;
+        }
+        public bool checkDiagonalMatrix(int[,] _matrices, int _rows, int _columns)
+        {
+            bool result = false, result1 = false, result2 = false;
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    if (i == j)
+                    {
+                        if (_matrices[i, j] !=0 )
+                        {
+                            result = true;
+                            continue;
+                        }
+                        else
+                        {
+                            result = false;
+                        }
+                    }
+                    else if (_matrices[i, j] == 0)
+                    {
+                        result1 = true;
+                    }
+                    else
+                    {
+                        result1 = false;
+                    }
+                }
+            }
+            if (result == true && result1 == true)
+            {
+                result2 = true;
+            }
+            return result2;
+        }
+        public bool checkSymmetricMatrix(int[,] _matrices, int _rows, int _columns)
+        {
+            bool result = false;
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+                    else if (_matrices[i, j] == _matrices[j,i])
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+                }
+            }
+            return result;
+        }
+        public bool checkSkewSymmetricMatrix(int[,] _matrices, int _rows, int _columns)
+        {
+            bool result = false;
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+                    else if (_matrices[i, j] ==-( _matrices[j, i]))
+                    {
                         result = true;
                     }
                     else
@@ -119,7 +208,7 @@ namespace MatricesSimulation
         }
         public bool checkUperTriangleMatrix(int[,] _matrices, int _rows, int _columns)
         {
-            bool result = false;
+            bool result = false,result1 = false, result2 = false;
             for (int i = 0; i < _rows; i++)
             {
                 for (int j = 0; j < _columns; j++)
@@ -140,21 +229,25 @@ namespace MatricesSimulation
                     {
                         if (_matrices[i, j] != 0)
                         {
-                            result = true;
+                            result1 = true;
                             continue;
                         }
                         else
                         {
-                            result = false;
+                            result1 = false;
                         }
                     }
                 }
             }
-            return result;
+            if (result==true&& result1==true)
+            {
+                result2 = true;
+            }
+            return result2;
         }
         public bool checkLowerTriangleMatrix(int[,] _matrices, int _rows, int _columns)
         {
-            bool result = false;
+            bool result = false, result1 = false, result2 = false;
             for (int i = 0; i < _rows; i++)
             {
                 for (int j = 0; j < _columns; j++)
@@ -175,17 +268,21 @@ namespace MatricesSimulation
                     {
                         if (_matrices[i,j]!=0)
                         {
-                            result = true;
+                            result1 = true;
                             continue;
                         }
                         else
                         {
-                            result = false;
+                            result1 = false;
                         }
                     }
                 }
             }
-            return result;
+            if (result==true&&result1==true)
+            {
+                result2 = true;
+            }
+            return result2;
         }
     }
 }
