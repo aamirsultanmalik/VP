@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace MatrciesSimulationPrototype
@@ -37,6 +38,12 @@ namespace MatrciesSimulationPrototype
             else
             {
                 groupBox2.Visible = true;
+                TextBox txt = new TextBox();
+
+
+                txt.Name = "txt" + i;
+                
+                this.Controls.Add(txt);
             }
         }
 
