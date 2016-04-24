@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -139,12 +140,23 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Matrix B";
             // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(576, 387);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 9;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 422);
+            this.ClientSize = new System.Drawing.Size(656, 495);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -175,6 +187,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnOk;
     }
 }
 

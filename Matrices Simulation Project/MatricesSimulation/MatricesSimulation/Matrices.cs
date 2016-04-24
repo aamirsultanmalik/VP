@@ -284,5 +284,53 @@ namespace MatricesSimulation
             }
             return result2;
         }
+        public int[,] addMatrices(int[,] _matrixA,int [,] _matrixB,int _rows,int _columns)
+        {
+            int[,] result = new int[_rows, _columns];
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    result[i, j] = _matrixA[i, j] + _matrixB[i, j];
+                }
+            }
+            return result; 
+        }
+        public int[,] subMatrices(int[,] _matrixA, int[,] _matrixB, int _rows, int _columns)
+        {
+            int[,] result = new int[_rows, _columns];
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    result[i, j] = _matrixA[i, j] - _matrixB[i, j];
+                }
+            }
+            return result;
+        }
+        public int[,] multiplyMatrices(int[,] _matrixA, int[,] _matrixB, int _rows, int _columns)
+        {
+            int[,] result = new int[_rows, _columns];
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    result[i, j] = _matrixA[i, j] * _matrixB[i, j];
+                }
+            }
+            return result;
+        }
+        public double[,] divideMatrices(int[,] _matrixA, int[,] _matrixB, int _rows, int _columns)
+        {
+            double[,] result = new double[_rows, _columns];
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    result[i, j] = _matrixA[i, j] / _matrixB[i, j];
+                }
+            }
+            return result;
+        }
     }
 }
