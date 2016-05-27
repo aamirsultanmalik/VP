@@ -44,6 +44,10 @@
             this.timer_addition = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.btn_reset = new System.Windows.Forms.Button();
+            this.btnDrawing = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -59,9 +63,9 @@
             // 
             // txt_MatrixALength
             // 
-            this.txt_MatrixALength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MatrixALength.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_MatrixALength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MatrixALength.Location = new System.Drawing.Point(822, 60);
+            this.txt_MatrixALength.Location = new System.Drawing.Point(411, 64);
             this.txt_MatrixALength.Name = "txt_MatrixALength";
             this.txt_MatrixALength.Size = new System.Drawing.Size(187, 26);
             this.txt_MatrixALength.TabIndex = 2;
@@ -80,7 +84,7 @@
             // 
             // combo_Operation
             // 
-            this.combo_Operation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.combo_Operation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.combo_Operation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_Operation.FormattingEnabled = true;
             this.combo_Operation.Items.AddRange(new object[] {
@@ -90,7 +94,7 @@
             "Matrix Multiplication",
             "Matrix Division",
             "Matrix Transpose"});
-            this.combo_Operation.Location = new System.Drawing.Point(822, 20);
+            this.combo_Operation.Location = new System.Drawing.Point(411, 24);
             this.combo_Operation.Name = "combo_Operation";
             this.combo_Operation.Size = new System.Drawing.Size(187, 28);
             this.combo_Operation.TabIndex = 1;
@@ -99,9 +103,9 @@
             // 
             // txt_MatrixBLength
             // 
-            this.txt_MatrixBLength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_MatrixBLength.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_MatrixBLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MatrixBLength.Location = new System.Drawing.Point(822, 100);
+            this.txt_MatrixBLength.Location = new System.Drawing.Point(411, 104);
             this.txt_MatrixBLength.Name = "txt_MatrixBLength";
             this.txt_MatrixBLength.Size = new System.Drawing.Size(187, 26);
             this.txt_MatrixBLength.TabIndex = 3;
@@ -128,7 +132,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(374, 426);
+            this.button1.Location = new System.Drawing.Point(126, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 67);
             this.button1.TabIndex = 5;
@@ -157,7 +161,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(518, 426);
+            this.button2.Location = new System.Drawing.Point(272, 435);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 67);
             this.button2.TabIndex = 7;
@@ -186,7 +190,7 @@
             this.btnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(755, 426);
+            this.btnOk.Location = new System.Drawing.Point(523, 435);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 67);
             this.btnOk.TabIndex = 9;
@@ -223,7 +227,7 @@
             this.btn_reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_reset.ForeColor = System.Drawing.Color.White;
-            this.btn_reset.Location = new System.Drawing.Point(191, 426);
+            this.btn_reset.Location = new System.Drawing.Point(12, 435);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 67);
             this.btn_reset.TabIndex = 11;
@@ -231,14 +235,56 @@
             this.btn_reset.UseVisualStyleBackColor = false;
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
+            // btnDrawing
+            // 
+            this.btnDrawing.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDrawing.BackColor = System.Drawing.Color.Black;
+            this.btnDrawing.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDrawing.FlatAppearance.BorderSize = 3;
+            this.btnDrawing.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnDrawing.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDrawing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDrawing.ForeColor = System.Drawing.Color.White;
+            this.btnDrawing.Location = new System.Drawing.Point(411, 435);
+            this.btnDrawing.Name = "btnDrawing";
+            this.btnDrawing.Size = new System.Drawing.Size(75, 67);
+            this.btnDrawing.TabIndex = 12;
+            this.btnDrawing.Text = "Canvas";
+            this.btnDrawing.UseVisualStyleBackColor = false;
+            this.btnDrawing.Click += new System.EventHandler(this.btnDrawing_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(155, 179);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 24);
+            this.label7.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.AllowDrop = true;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(632, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(617, 515);
+            this.panel1.TabIndex = 14;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1014, 495);
+            this.ClientSize = new System.Drawing.Size(1248, 514);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnDrawing);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnOk);
@@ -252,12 +298,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_MatrixALength);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = " Matrices Simulation";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +329,9 @@
         private System.Windows.Forms.Timer timer_addition;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Button btnDrawing;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

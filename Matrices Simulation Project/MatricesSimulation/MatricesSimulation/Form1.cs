@@ -10,13 +10,16 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
+//using System.Windows.Shapes;
+
 namespace MatricesSimulation
 {
     public partial class Form1 : Form
     {
         Graphics graphics;
-        Font font = new Font("Aria", 14, FontStyle.Italic);
+        Rectangle[,] rectangle;
+        ParameterizedThreadStart pmt;
+        Font font = new Font("Arial", 10, FontStyle.Italic);
         string lengthA, lengthB;
         public static int rowsA=0, columnsA=0, rowsB = 0, columnsB = 0;
         public delegate void delegateForVoidMethod(string str);
@@ -37,6 +40,11 @@ namespace MatricesSimulation
             button1.Hide();
             btnOk.Hide();
             button2.Hide();
+            
+        }
+        public void noMethode()
+        {
+            MessageBox.Show("this is fucking thread");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -179,7 +187,7 @@ namespace MatricesSimulation
                         rowsA = obj_matrices.getRows();
                         columnsA = obj_matrices.getColumns();
                         creatMatrixA(rowsA, columnsA);
-                        firstDraw = true;
+                       // firstDraw = true;
                     }
                     else
                     {
@@ -200,7 +208,7 @@ namespace MatricesSimulation
                         rowsB = obj_matrices.getRows();
                         columnsB = obj_matrices.getColumns();
                         creatMatrixB(rowsB, columnsB);
-                        firstDraw = true;
+                       // firstDraw = true;
                     }
                     else
                     {
@@ -215,7 +223,7 @@ namespace MatricesSimulation
                         rowsA = obj_matrices.getRows();
                         columnsA = obj_matrices.getColumns();
                         creatMatrixA(rowsA, columnsA);
-                        firstDraw = true;
+                       // firstDraw = true;
                     }
                     else
                     {
@@ -508,90 +516,150 @@ namespace MatricesSimulation
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            graphics = e.Graphics;
-            drawRectangle(graphics);
-        }
-        public void drawRectangle(Graphics _graphics)
-        {
-            _graphics.FillRectangle(Brushes.Black, 1000, 300, 40, 40);
-            _graphics.DrawString("125", font, Brushes.White, 300, 305);
-        }
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            try
+            if (firstDraw == true)
             {
-                if (typeMAtrix == true)
-                {
-                    int height = 25;
-                    for (int i = 0; i < rowsA; i++)
-                    {
-                        for (int j = 0; j < columnsA; j++)
-                        {
-                            while (height != 65)
-                            {
-                                txtA[i, j].Size = new Size(25, height);
-                                height++;
-                                Thread.Sleep(5);
-                            }
+                graphics = e.Graphics;
+                drawRectangle();
+                this.Invalidate();
+            }
+        }
+        static int x, y;
+        public  void drawRectangle()
+        {
+            rectangle = new Rectangle[rowsA, columnsA];
+            Point labelPosition = label7.Location;
+            x = labelPosition.X;
+            y = labelPosition.Y;
 
-                        }
-                    }
-                    timer.Stop();
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 0)
+                {
+                    x = labelPosition.X + 10;
                 }
                 else
                 {
-
-                    int sourceX, sourceY, destX, destY, stopY;
-                    for (int i = 0; i < rowsA; i++)
-                    {
-                        for (int j = 0; j < columnsA; j++)
-                        {
-                            sourceX = txtA[i, j].Location.X;
-                            sourceY = txtA[i, j].Location.Y;
-                            stopY = sourceY - 20;
-                            destX = txtResult[i, j].Location.X;
-                            destY = txtResult[i, j].Location.Y;
-                            txtA[i, j].BackColor = Color.Red;
-                            this.Refresh();
-                            while (sourceY != stopY)
-                            {
-                                {
-                                    txtA[i, j].Location = new Point(sourceX, sourceY);
-                                    sourceY--;
-                                }
-                            }
-                            while ((sourceX != destX))
-                            {
-                                {
-                                    txtA[i, j].Location = new Point(sourceX, sourceY);
-                                    sourceX++;
-                                    Thread.Sleep(20);
-                                }
-                            }
-                            while (sourceY != destY - 12)
-                            {
-                                {
-                                    txtA[i, j].Location = new Point(sourceX, sourceY);
-                                    sourceY++;
-                                    Thread.Sleep(20);
-                                }
-                            }
-                            txtA[i, j].Dispose();
-                            txtResult[i, j].Show();
-                            txtResult[i, j].Text = result[i, j].ToString();
-                            this.Refresh();
-                        }
-                    }
-                    timer.Stop();
-                    creatMatrixA(rowsA, columnsA);
-                    fillMatrixA();
+                    x = labelPosition.X + 10;
+                    y = y + 30;
+                }
+                for (int j = 0; j < 3; j++)
+                {
+                    x = x + 35;
+                    rectangle[i, j] = new Rectangle(x, y + 40, 25, 25);
+                    graphics.FillRectangle(Brushes.Black,rectangle[i,j]);// x, (y+40), 25, 25
+                    graphics.DrawString(txtA[i,j].Text, font, Brushes.White, x, (y + 40));
                 }
             }
-            catch (Exception ex)
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDrawing_Click(object sender, EventArgs e)
+        {
+           // ParameterizedThreadStart start = new ParameterizedThreadStart(drawRectangle(graphics));
+            //Thread t = new Thread(start);
+          //  t.Start();
+           // ParameterizedThreadStart pmt = new ParameterizedThreadStart(drawRectangle);
+            firstDraw = true;
+            graphics = this.CreateGraphics();
+            drawRectangle();
+          //  timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (firstDraw == true)
             {
-                MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                for (int i = 0; i < rowsA; i++)
+                {
+                    for (int j = 0; j < columnsA; j++)
+                    {
+                        while (rectangle[i,j].X!=250)
+                        {
+
+                            rectangle[i, j].X += 10;
+                        }
+                    }
+                }
+                //this.Invalidate();
             }
-            
+            //try
+            //{
+            //    if (typeMAtrix == true)
+            //    {
+            //        int height = 25;
+            //        for (int i = 0; i < rowsA; i++)
+            //        {
+            //            for (int j = 0; j < columnsA; j++)
+            //            {
+            //                while (height != 65)
+            //                {
+            //                    txtA[i, j].Size = new Size(25, height);
+            //                    height++;
+            //                    Thread.Sleep(5);
+            //                }
+
+            //            }
+            //        }
+            //        timer.Stop();
+            //    }
+            //    else
+            //    {
+
+            //        int sourceX, sourceY, destX, destY, stopY;
+            //        for (int i = 0; i < rowsA; i++)
+            //        {
+            //            for (int j = 0; j < columnsA; j++)
+            //            {
+            //                sourceX = txtA[i, j].Location.X;
+            //                sourceY = txtA[i, j].Location.Y;
+            //                stopY = sourceY - 20;
+            //                destX = txtResult[i, j].Location.X;
+            //                destY = txtResult[i, j].Location.Y;
+            //                txtA[i, j].BackColor = Color.Red;
+            //                this.Refresh();
+            //                while (sourceY != stopY)
+            //                {
+            //                    {
+            //                        txtA[i, j].Location = new Point(sourceX, sourceY);
+            //                        sourceY--;
+            //                    }
+            //                }
+            //                while ((sourceX != destX))
+            //                {
+            //                    {
+            //                        txtA[i, j].Location = new Point(sourceX, sourceY);
+            //                        sourceX++;
+            //                        Thread.Sleep(20);
+            //                    }
+            //                }
+            //                while (sourceY != destY - 12)
+            //                {
+            //                    {
+            //                        txtA[i, j].Location = new Point(sourceX, sourceY  
+            //                        sourceY++;
+            //                        Thread.Sleep(20);
+            //                    }
+            //                }
+            //                txtA[i, j].Dispose();
+            //                txtResult[i, j].Show();
+            //                txtResult[i, j].Text = result[i, j].ToString();
+            //                this.Refresh();
+            //            }
+            //        }
+            //        timer.Stop();
+            //        creatMatrixA(rowsA, columnsA);
+            //        fillMatrixA();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
         }
 
         public void changeTypeColor()

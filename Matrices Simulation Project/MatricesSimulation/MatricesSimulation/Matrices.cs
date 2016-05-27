@@ -36,6 +36,7 @@ namespace MatricesSimulation
                 MessageBox.Show(io.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         public int getRows()
         {
             return rows;

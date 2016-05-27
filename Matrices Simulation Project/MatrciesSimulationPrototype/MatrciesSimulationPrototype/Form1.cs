@@ -41,7 +41,7 @@ namespace MatrciesSimulationPrototype
                 TextBox txt = new TextBox();
 
 
-                txt.Name = "txt" + i;
+                txt.Name = "txt";
                 
                 this.Controls.Add(txt);
             }
